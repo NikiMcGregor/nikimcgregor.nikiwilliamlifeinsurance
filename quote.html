@@ -19,7 +19,7 @@
     label { display:block; font-size:.8rem; font-weight:700; margin-bottom:4px; text-transform:uppercase; letter-spacing:.02em; }
     input, select, textarea { width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,.12); background:#f9fafb; font-size:1rem; }
     input:focus, select:focus, textarea:focus { outline:none; border-color:var(--brand-green-600); box-shadow:0 0 0 4px var(--ring); background:#fff; }
-    button { background:var(--brand-green); color:#fff; font-weight:700; padding:12px 18px; border:none; border-radius:16px; cursor:pointer; box-shadow:0 8px 24px rgba(13,148,136,.22); margin-top:10px; }
+    button { background:var(--brand-green); color:#fff; font-weight:700; padding:12px 18px; border:none; border-radius:16px; cursor:pointer; box-shadow: 0 8px 24px rgba(13,148,136,.22); margin-top:10px; }
     button:hover { background:var(--brand-green-600); }
     .muted { color:var(--muted); font-size:.9rem; }
   </style>
@@ -154,39 +154,44 @@
         </select>
       </div>
 
-      <button type="submit">Submit Quote Request</button>
+      <button id="submitBtn" type="submit">Submit Quote Request</button>
       <div id="status" class="muted" role="status"></div>
     </form>
   </main>
 
-  <script>
-    // ---- Supabase client (YOUR CREDS) ----
+  <!-- Client-side Supabase insert (anon key) -->
+  <script type="module">
+    // ---- Supabase public creds (OK for client inserts; keep RLS safe) ----
     const SUPABASE_URL = 'https://gdejkmkiwopewdqczawz.supabase.co';
     const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdkZWprbWtpd29wZXdkcWN6YXd6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk1Mzc5OTIsImV4cCI6MjA3NTExMzk5Mn0.l0FjSULSAdHy_jvHZzMcHkGvoypRxfHNNghJBSdvki8';
 
-    let supabase;
-    (async () => {
-      const { createClient } = await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm');
-      supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-    })();
+    import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
     const form = document.getElementById('quote-form');
     const statusEl = document.getElementById('status');
+    const submitBtn = document.getElementById('submitBtn');
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       statusEl.textContent = 'Submitting…';
+      submitBtn.disabled = true;
 
+      // Collect fields
       const data = Object.fromEntries(new FormData(form).entries());
 
-      // Basic validation for required fields
+      // Basic required check
       const required = ['full_name','email','phone','address','city','state','zip','gender','age','marital_status','occupation','height','weight','smoking_status','coverage_amount'];
       for (const k of required) {
-        if (!String(data[k] || '').trim()) { statusEl.textContent = `Please complete: ${k.replace('_',' ')}`; return; }
+        if (!String(data[k] || '').trim()) {
+          statusEl.textContent = `Please complete: ${k.replace('_',' ')}`;
+          submitBtn.disabled = false;
+          return;
+        }
       }
 
       try {
-        const { error } = await supabase.from('leads').insert([{
+        const payload = {
           full_name: data.full_name,
           email: data.email,
           phone: data.phone,
@@ -207,15 +212,24 @@
           coverage_amount: data.coverage_amount,
           page: 'quote',
           consent: true
-        }]);
+        };
 
-        if (error) throw error;
+        const { data: inserted, error } = await supabase
+          .from('leads')
+          .insert([payload])
+          .select();
+
+        if (error) {
+          console.error('Supabase error:', error);
+          throw new Error(error.message || 'Insert failed');
+        }
 
         statusEl.textContent = 'Submitted! Redirecting…';
-        setTimeout(() => location.href = './thank-you.html', 600);
+        setTimeout(() => { window.location.href = './thank-you.html'; }, 500);
       } catch (err) {
         console.error(err);
-        statusEl.textContent = 'Something went wrong. Please try again.';
+        statusEl.textContent = 'Something went wrong: ' + (err?.message || 'Unknown error');
+        submitBtn.disabled = false;
       }
     });
   </script>
