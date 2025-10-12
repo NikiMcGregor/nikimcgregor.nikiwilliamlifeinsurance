@@ -4,14 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FAQ – Simplified Life Insurance Agency</title>
-  <meta name="description" content="Answers to common questions about term life insurance, death benefits, group life insurance, and coverage options from Simplified Life Insurance Agency." />
+  <meta name="description" content="Clear answers about term life insurance, death benefits, group life coverage, and how to choose the right policy for your family." />
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="./logos/logo.png" />
 
   <style>
     :root {
-      --primary: #273b71;     /* navy */
+      --primary: #273b71;
       --white: #ffffff;
       --black: #000000;
       --muted: #475569;
@@ -28,7 +27,6 @@
     }
     .container { max-width: 1120px; margin: 0 auto; padding: 24px; }
 
-    /* Header / Nav (matches your site) */
     header {
       position: sticky; top: 0; z-index: 10;
       background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.88));
@@ -39,24 +37,22 @@
       display: flex; justify-content: space-between; align-items: center;
       padding: 20px 24px;
     }
-    .brand img { display: block; max-height: 170px; width: auto; } /* 170px standard */
+    .brand img { display: block; max-height: 170px; width: auto; }
     .nav { display: flex; gap: 16px; align-items: center; }
     .nav a { text-decoration: none; color: var(--muted); font-weight: 600; }
 
     .btn {
       appearance: none; border: 0; border-radius: var(--radius);
-      background: var(--primary); color: var(--white); font-weight: 700;
+      background: var(--primary); color: var(--white) !important; font-weight: 700;
       padding: 12px 22px; cursor: pointer; text-decoration: none;
       box-shadow: 0 8px 24px rgba(39,59,113,.22);
-      transition: transform .12s ease, background .12s ease;
+      transition: transform .12s ease, background .12s ease, color .12s ease;
     }
-    .btn:hover { transform: translateY(-1px); background: #1e2f5c; color: var(--white); }
+    .btn:hover { transform: translateY(-1px); background: #1e2f5c; color: var(--white) !important; }
 
-    /* Page title */
     h1 { font-size: clamp(28px, 3.6vw, 40px); margin: 8px 0 10px; color: var(--primary); }
     .lead { color: var(--muted); font-size: clamp(15px, 1.6vw, 18px); max-width: 900px; }
 
-    /* FAQ list */
     .faq { max-width: 960px; margin: 24px auto 0; display: grid; gap: 12px; }
     details {
       background: #fff; border: 1px solid var(--card-border);
@@ -68,13 +64,13 @@
     }
     summary::-webkit-details-marker { display:none; }
     summary:focus { outline: none; }
-    .answer { color: var(--muted); margin-top: 8px; line-height: 1.6; }
+    .answer { color: var(--muted); margin-top: 8px; line-height: 1.7; }
+    .answer p { margin: 0 0 12px; }
 
     footer { margin-top: 48px; padding: 40px 0; color: var(--muted); font-size: 14px; text-align: center; }
   </style>
 </head>
 <body>
-  <!-- Header -->
   <header>
     <div class="container">
       <div class="brand">
@@ -89,60 +85,94 @@
     </div>
   </header>
 
-  <!-- Main -->
   <main class="container">
     <h1>Frequently Asked Questions</h1>
     <p class="lead">
-      Plain-English answers about <strong>term life insurance</strong>, the <strong>death benefit</strong>, <strong>group life insurance</strong>, and how to choose the right <strong>life insurance coverage</strong>.
+      Find practical answers about term policies, the death benefit, employer group coverage, and how to choose the right plan for your household.
     </p>
 
     <section class="faq" aria-label="FAQ list">
       <details>
         <summary>What is a death benefit?</summary>
         <div class="answer">
-          The <em>death benefit</em> is the amount a policy may pay to your beneficiaries if the insured person passes away while the policy is in force, subject to policy terms and claim approval by the carrier.
+          <p>
+            The death benefit is the sum a life insurer may pay to your beneficiaries after a covered person passes away while the policy is active. This payment can help replace income, cover mortgage obligations, fund education costs, and manage everyday household expenses during a difficult time.
+          </p>
+          <p>
+            Payout rules depend on the contract and the carrier’s claims process. We explain how beneficiary designations work, what documentation is usually needed, and how different policy types handle the benefit. Our goal is to help you choose coverage that supports your family’s financial plan.
+          </p>
         </div>
       </details>
 
       <details>
         <summary>How does term life insurance work?</summary>
         <div class="answer">
-          With <em>term life insurance</em>, you choose a term length (e.g., 10–30 years) and a coverage amount. If the insured dies during the term, the beneficiary may receive the death benefit according to the policy provisions.
+          <p>
+            A term policy provides protection for a set period such as ten, twenty, or thirty years. You select a coverage amount and term length that fits your budget and your goals. If the insured person dies during the term, the insurer may pay the death benefit to the beneficiaries named on the policy.
+          </p>
+          <p>
+            Many families choose term coverage for income replacement while raising children or paying down a mortgage. We help you compare policy terms, riders, and conversion options so you can see how a plan may adapt as your life changes.
+          </p>
         </div>
       </details>
 
       <details>
         <summary>Is group life insurance through my employer enough?</summary>
         <div class="answer">
-          <em>Group life insurance</em> can be a great start, but amounts are often limited and may not be portable if you change jobs. Many families supplement with an individual policy to lock in coverage that fits long-term goals.
+          <p>
+            Employer group coverage is a useful starting point because enrollment is simple and the cost is often low. The challenge is that limits can be modest and the coverage may end when you change jobs. That is why many people layer an individual policy on top of what they receive at work.
+          </p>
+          <p>
+            We compare your group benefits with individual options so you can see the difference in portability, benefit amounts, and long-term fit. The goal is a combined strategy that protects your household through different stages of life.
+          </p>
         </div>
       </details>
 
       <details>
-        <summary>What’s a mutual insurance company?</summary>
+        <summary>What is a mutual insurance company?</summary>
         <div class="answer">
-          A <em>mutual insurance</em> company is owned by policyholders rather than stockholders. That structure can influence dividends and long-term priorities. We can compare mutual and stock carriers to help you decide.
+          <p>
+            A mutual insurer is owned by its policyholders. This ownership model can influence how profits are used, such as supporting dividends on certain policy types or reinforcing financial strength. A stock insurer, by contrast, is owned by shareholders and may have different priorities.
+          </p>
+          <p>
+            We work with a range of reputable carriers and explain how each company’s structure, ratings, and product design may matter to you. That way you can choose the partner and policy that align with your preferences.
+          </p>
         </div>
       </details>
 
       <details>
         <summary>How much life insurance coverage do I need?</summary>
         <div class="answer">
-          It depends on income, debts, dependents, and future plans. Common starting points are 10–12× annual income or a needs analysis that considers mortgage, childcare, and college costs. We’ll help tailor an amount for your situation.
+          <p>
+            The right amount depends on income, debts, savings, dependents, and future goals. A quick starting point is a multiple of income, often ten to twelve times annual earnings. A more precise approach is a needs analysis that looks at the mortgage, childcare costs, education plans, and long-term living expenses.
+          </p>
+          <p>
+            We walk through scenarios with you and adjust for existing resources so you are not over- or under-insured. The result is a coverage target that feels appropriate and sustainable for your budget.
+          </p>
         </div>
       </details>
 
       <details>
         <summary>Will I need a medical exam?</summary>
         <div class="answer">
-          It varies by product and carrier. Some offer simplified or accelerated underwriting (no exam) for eligible applicants. Final approval and requirements are determined by the issuing life insurance company.
+          <p>
+            It depends on the product and the carrier. Some applicants qualify for simplified or accelerated underwriting that relies on health data and may not require a physical exam. Others may be asked to complete an exam so the insurer can fully evaluate the application.
+          </p>
+          <p>
+            We help set expectations before you apply and present options that match your comfort level. Final requirements are determined by the issuing company and are part of its underwriting guidelines.
+          </p>
         </div>
       </details>
 
       <details>
         <summary>How do quotes and rates work?</summary>
         <div class="answer">
-          Online quotes are estimates. Final rates depend on underwriting, health history, lifestyle, and other factors. Product availability and features vary by state and carrier.
+          <p>
+            Initial quotes provide an estimate based on the information available at the time. The final premium is set after underwriting and reflects health, lifestyle, family history, and other factors. Product features and availability vary by carrier and by state.
+          </p>
+          <p>
+            We compare multiple companies so you can see a range of options. Our role is to explain tradeoffs in plain language and help you select a plan that balances cost, benefits, and flexibility.
+          </p>
         </div>
       </details>
     </section>
@@ -152,7 +182,6 @@
     © <span id="year"></span> Simplified Life Insurance Agency. All rights reserved.
   </footer>
 
-  <!-- FAQ Schema (Structured Data) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -163,7 +192,7 @@
         "name": "What is a death benefit?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The death benefit is the amount a policy may pay to your beneficiaries if the insured person passes away while the policy is in force, subject to policy terms and claim approval by the carrier."
+          "text": "The death benefit is the sum a life insurer may pay to your beneficiaries after a covered person passes away while the policy is active. This payment can help replace income, cover mortgage obligations, fund education costs, and manage everyday household expenses. Payout rules depend on the contract and the carrier’s claims process."
         }
       },
       {
@@ -171,7 +200,7 @@
         "name": "How does term life insurance work?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "With term life insurance, you choose a term length (e.g., 10–30 years) and a coverage amount. If the insured dies during the term, the beneficiary may receive the death benefit according to the policy provisions."
+          "text": "A term policy provides protection for a set period such as ten, twenty, or thirty years. You select a coverage amount and term length that fits your goals. If the insured person dies during the term, the insurer may pay the death benefit to the beneficiaries named on the policy."
         }
       },
       {
@@ -179,15 +208,15 @@
         "name": "Is group life insurance through my employer enough?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Group life insurance can be a great start, but amounts are often limited and may not be portable if you change jobs. Many families supplement with an individual policy to lock in coverage that fits long-term goals."
+          "text": "Employer group coverage is a helpful starting point, but limits can be modest and coverage may end when you change jobs. Many people layer an individual policy on top of work benefits to create a more durable protection plan."
         }
       },
       {
         "@type": "Question",
-        "name": "What’s a mutual insurance company?",
+        "name": "What is a mutual insurance company?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A mutual insurance company is owned by policyholders rather than stockholders. That structure can influence dividends and long-term priorities. We can compare mutual and stock carriers to help you decide."
+          "text": "A mutual insurer is owned by policyholders rather than shareholders. This structure can influence how profits are used, including potential dividends on certain policy types. A stock insurer is owned by shareholders and may balance different priorities."
         }
       },
       {
@@ -195,7 +224,7 @@
         "name": "How much life insurance coverage do I need?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "It depends on income, debts, dependents, and future plans. Common starting points are 10–12× annual income or a needs analysis that considers mortgage, childcare, and college costs."
+          "text": "The right amount depends on income, debts, savings, dependents, and future goals. Many households start with a multiple of income or a needs analysis that considers housing, childcare, and education costs."
         }
       },
       {
@@ -203,7 +232,7 @@
         "name": "Will I need a medical exam?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "It varies by product and carrier. Some offer simplified or accelerated underwriting (no exam) for eligible applicants. Final approval and requirements are determined by the issuing life insurance company."
+          "text": "Requirements vary by product and carrier. Some applicants qualify for simplified or accelerated underwriting with no exam, while others may complete a medical exam as part of the review."
         }
       },
       {
@@ -211,7 +240,7 @@
         "name": "How do quotes and rates work?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Online quotes are estimates. Final rates depend on underwriting, health history, lifestyle, and other factors. Product availability and features vary by state and carrier."
+          "text": "Online quotes are estimates. Final premiums are set after underwriting and reflect health, lifestyle, and other factors. Availability and features vary by carrier and by state."
         }
       }
     ]
