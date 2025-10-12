@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resources – Simplified Life Insurance Agency</title>
+  <meta name="description" content="Learn about term policies, death benefits, group life coverage, mutual insurers, and how to choose the right amount of protection for your family." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./logos/logo.png" />
+
+  <style>
+    :root {
+      --primary: #273b71;     /* navy */
+      --white: #ffffff;
+      --black: #000000;
+      --muted: #475569;
+      --card-border: rgba(15,23,42,.08);
+      --radius: 16px;
+    }
+
+    html, body { height: 100%; scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color: var(--black);
+      background: var(--white);
+    }
+    .container { max-width: 1120px; margin: 0 auto; padding: 24px; }
+
+    /* Header / Nav */
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.88));
+      backdrop-filter: saturate(1.3) blur(6px);
+      border-bottom: 1px solid var(--card-border);
+    }
+    header .container {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 24px;
+    }
+    .brand img { display: block; max-height: 170px; width: auto; }
+    .nav { display: flex; gap: 16px; align-items: center; }
+    .nav a { text-decoration: none; color: var(--muted); font-weight: 600; }
+
+    .btn {
+      appearance: none; border: 0; border-radius: var(--radius);
+      background: var(--primary); color: var(--white) !important; font-weight: 700;
+      padding: 12px 22px; cursor: pointer; text-decoration: none;
+      box-shadow: 0 8px 24px rgba(39,59,113,.22);
+      transition: transform .12s ease, background .12s ease, color .12s ease;
+    }
+    .btn:hover { transform: translateY(-1px); background: #1e2f5c; color: var(--white) !important; }
+
+    /* Page */
+    h1 { font-size: clamp(28px, 3.6vw, 40px); margin: 8px 0 12px; color: var(--primary); }
+    .lead { color: var(--muted); font-size: clamp(15px, 1.6vw, 18px); max-width: 900px; }
+
+    /* Filters / Topics */
+    .topics { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 6px; }
+    .topic {
+      display: inline-block; padding: 8px 12px; border-radius: 999px;
+      background: #f1f5f9; color: var(--muted); border: 1px solid var(--card-border);
+      font-size: .9rem; text-decoration: none;
+    }
+
+    /* Article list */
+    .list { display: grid; gap: 16px; margin-top: 20px; }
+    .card {
+      background: #fff; border: 1px solid var(--card-border);
+      border-radius: 16px; padding: 18px 18px;
+      box-shadow: 0 24px 60px -24px rgba(2,6,23,.08);
+      display: grid; gap: 8px;
+    }
+    .card h2 { margin: 0; font-size: 1.2rem; color: var(--black); }
+    .card h2 a { color: var(--black); text-decoration: none; }
+    .card h2 a:hover { text-decoration: underline; }
+    .meta { color: var(--muted); font-size: .9rem; }
+    .excerpt { color: var(--muted); line-height: 1.7; }
+    .actions { display: flex; gap: 10px; margin-top: 6px; }
+    .read { text-decoration: none; font-weight: 700; color: var(--primary); }
+    .read:hover { text-decoration: underline; }
+
+    footer { margin-top: 48px; padding: 40px 0; color: var(--muted); font-size: 14px; text-align: center; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="brand">
+        <img src="./logos/logo.png" alt="Simplified Life Insurance Agency Logo" />
+      </div>
+      <nav class="nav">
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./faq.html">FAQ</a>
+        <a class="btn" href="./quote.html">Get a Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="container">
+    <h1>Resources and Guides</h1>
+    <p class="lead">
+      Learn how policies work, what a death benefit covers, how group plans compare to personal plans, and how to choose a coverage amount that fits your goals.
+    </p>
+
+    <!-- Topic chips (optional anchors to future filtered pages) -->
+    <div class="topics">
+      <a class="topic" href="#term-life">Term policy basics</a>
+      <a class="topic" href="#death-benefit">Death benefit</a>
+      <a class="topic" href="#group-life">Employer group coverage</a>
+      <a class="topic" href="#coverage-amount">Coverage amount</a>
+      <a class="topic" href="#mutual-insurance">Mutual insurers</a>
+    </div>
+
+    <!-- Article list -->
+    <section class="list" aria-label="Articles">
+      <article id="term-life" class="card">
+        <h2><a href="article-term-vs-group.html">Term policy compared with group coverage</a></h2>
+        <div class="meta">Reading time 6 minutes</div>
+        <p class="excerpt">
+          Employer group plans are convenient, but the benefit is often limited and it may not travel with you if you switch jobs. A personal term policy can complement group coverage so your protection plan stays consistent through life changes. This guide shows how to compare cost, flexibility, and long term fit.
+        </p>
+        <div class="actions">
+          <a class="read" href="article-term-vs-group.html">Read more</a>
+        </div>
+      </article>
+
+      <article id="death-benefit" class="card">
+        <h2><a href="article-understanding-death-benefit.html">Understanding the death benefit</a></h2>
+        <div class="meta">Reading time 5 minutes</div>
+        <p class="excerpt">
+          The death benefit is the foundation of a policy. Beneficiaries can use the proceeds for living expenses, debt repayment, or future goals. Learn how payout options, beneficiaries, and claims steps work so your plan supports the people you care about.
+        </p>
+        <div class="actions">
+          <a class="read" href="article-understanding-death-benefit.html">Read more</a>
+        </div>
+      </article>
+
+      <article id="mutual-insurance" class="card">
+        <h2><a href="article-mutual-vs-stock-insurers.html">Mutual insurers compared with stock insurers</a></h2>
+        <div class="meta">Reading time 7 minutes</div>
+        <p class="excerpt">
+          Mutual insurers are owned by policyholders, while stock insurers are owned by shareholders. Ownership can influence dividends, priorities, and how profits are used. This overview explains what those differences can mean for your choice of company.
+        </p>
+        <div class="actions">
+          <a class="read" href="article-mutual-vs-stock-insurers.html">Read more</a>
+        </div>
+      </article>
+
+      <article id="coverage-amount" class="card">
+        <h2><a href="article-choose-coverage-amount.html">How to choose a coverage amount</a></h2>
+        <div class="meta">Reading time 6 minutes</div>
+        <p class="excerpt">
+          Good planning looks at income, debts, savings, dependents, and future goals. Many families start with a multiple of income and then refine it with a needs analysis that considers housing, childcare, and education costs. Use this step by step method to reach a number that fits your budget.
+        </p>
+        <div class="actions">
+          <a class="read" href="article-choose-coverage-amount.html">Read more</a>
+        </div>
+      </article>
+
+      <article id="group-life" class="card">
+        <h2><a href="article-simplified-underwriting.html">What simplified underwriting can mean for you</a></h2>
+        <div class="meta">Reading time 4 minutes</div>
+        <p class="excerpt">
+          Some applicants qualify for an application path that can be faster and may not require a medical exam. Others complete an exam as part of the review. This article explains what to expect and how to prepare.
+        </p>
+        <div class="actions">
+          <a class="read" href="article-simplified-underwriting.html">Read more</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- CTA -->
+    <section style="margin-top:24px;">
+      <a class="btn" href="./quote.html">Start your quote</a>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Simplified Life Insurance Agency. All rights reserved.
+  </footer>
+
+  <!-- Structured data: list of articles -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Simplified Life Insurance Resources",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "url": "https://yourdomain.com/article-term-vs-group.html",
+        "name": "Term policy compared with group coverage"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "url": "https://yourdomain.com/article-understanding-death-benefit.html",
+        "name": "Understanding the death benefit"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "url": "https://yourdomain.com/article-mutual-vs-stock-insurers.html",
+        "name": "Mutual insurers compared with stock insurers"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "url": "https://yourdomain.com/article-choose-coverage-amount.html",
+        "name": "How to choose a coverage amount"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "url": "https://yourdomain.com/article-simplified-underwriting.html",
+        "name": "What simplified underwriting can mean for you"
+      }
+    ]
+  }
+  </script>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
