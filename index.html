@@ -5,10 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Simplified Life Insurance Agency — Life Insurance Options</title>
   <meta name="description" content="Simplified Life Insurance Agency helps you explore life insurance options. No guaranteed pricing or coverage. Subject to underwriting and carrier approval."/>
-
-  <!-- ✅ Correct favicon path -->
   <link rel="icon" type="image/png" href="./logos/logo.png">
-
   <style>
     :root {
       --primary: #273b71;
@@ -40,14 +37,14 @@
     }
     .brand img { display: block; max-height: 170px; width: auto; }
     .nav { display: flex; gap: 16px; align-items: center; }
-    .nav a { text-decoration: none; color: var(--white); font-weight: 600; }
+    .nav a { text-decoration: none; color: var(--muted); font-weight: 600; }
     .btn {
       appearance: none; border: 0; border-radius: var(--radius);
-      background: var(--primary); color: var(--white); font-weight: 700; padding: 12px 22px; cursor: pointer;
+      background: var(--primary); color: var(--white) !important; font-weight: 700; padding: 12px 22px; cursor: pointer;
       box-shadow: 0 8px 24px rgba(39,59,113,.22);
       text-decoration: none; transition: transform .12s ease, background .12s ease;
     }
-    .btn:hover { transform: translateY(-1px); background: #1e2f5c;color: var(--white); }
+    .btn:hover { transform: translateY(-1px); background: #1e2f5c; color: var(--white) !important; }
     .hero {
       padding: 72px 0 48px;
       display: grid; grid-template-columns: 1fr; gap: 24px; align-items: center; text-align: center;
@@ -65,7 +62,15 @@
     .why { display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 10px; }
     @media (max-width: 900px){ .why { grid-template-columns: 1fr; } }
     .why .item { background: var(--white); border:1px solid var(--card-border); border-radius:16px; padding:18px; display:flex; gap:12px; align-items:flex-start; }
-    .why .icon { width:22px; height:22px; border-radius:999px; background:#eef2ff; border:1px solid #c7d2fe; display:inline-flex; align-items:center; justify-content:center; font-weight:900; color:#1e2f5c;color: var(--white); }
+    .why .icon { width:22px; height:22px; border-radius:999px; background:#eef2ff; border:1px solid #c7d2fe; display:inline-flex; align-items:center; justify-content:center; font-weight:900; color:#1e2f5c; }
+    .learn-more { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 24px; }
+    .card {
+      background: var(--white); border: 1px solid var(--card-border); border-radius: 14px; padding: 20px;
+      box-shadow: 0 4px 20px rgba(15,23,42,0.06);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(15,23,42,0.1); }
+    .card a { text-decoration: none; color: var(--primary); font-weight: 700; font-size: 1.05rem; }
     footer { margin-top: 48px; padding: 40px 0; color: var(--muted); font-size: 14px; text-align: center; }
   </style>
 </head>
@@ -77,6 +82,9 @@
       </div>
       <nav class="nav">
         <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./resources.html">Resources</a>
+        <a href="./faq.html">FAQ</a>
         <a class="btn" href="./quote.html">Get a Quote</a>
       </nav>
     </div>
@@ -120,6 +128,18 @@
       </div>
     </section>
 
+    <section class="container" style="padding: 40px 0;">
+      <h2>Learn More</h2>
+      <p style="color: var(--muted); margin-bottom: 18px;">Explore our latest guides to help you understand coverage, benefits, and how policies work.</p>
+      <div class="learn-more">
+        <div class="card"><a href="./article-term-vs-group.html">Term policy compared with group coverage</a><p>Compare term life with employer group coverage and see how to balance both for lasting protection.</p></div>
+        <div class="card"><a href="./article-understanding-death-benefit.html">Understanding the death benefit</a><p>Learn what the death benefit is, how it works, and what it can do for your family.</p></div>
+        <div class="card"><a href="./article-mutual-vs-stock-insurers.html">Mutual insurers compared with stock insurers</a><p>Understand how ownership structures affect dividends, stability, and company priorities.</p></div>
+        <div class="card"><a href="./article-choose-coverage-amount.html">How to choose a coverage amount</a><p>Estimate a coverage amount that fits your family, income, and long-term goals.</p></div>
+        <div class="card"><a href="./article-simplified-underwriting.html">What simplified underwriting can mean for you</a><p>See how simplified or accelerated underwriting may speed up approval without an exam.</p></div>
+      </div>
+    </section>
+
     <section class="container" style="padding: 24px 0;">
       <p style="color:#475569; margin:0;">
         Coverage and eligibility are determined by the issuing carrier and subject to underwriting guidelines. Product availability and features vary by state and carrier. Information on this site is for educational purposes only and does not constitute an offer of insurance. Submission of information does not guarantee a quote, offer, or issuance of a policy.
@@ -128,7 +148,7 @@
   </main>
 
   <footer>
-    Â© <span id="year"></span> Simplified Life Insurance Agency. All rights reserved.
+    © <span id="year"></span> Simplified Life Insurance Agency. All rights reserved.
   </footer>
 
   <script>
